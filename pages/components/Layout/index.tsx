@@ -4,7 +4,7 @@ import Navbar from '../Navbar'
 
 type Props = {
   children: React.ReactNode
-  isAuth: boolean
+  isAuth: Promise<boolean>
 }
 
 const Layout: React.FC<Props> = ({ children, isAuth }) => {

@@ -8,6 +8,8 @@ const CreatePost = () => {
   const [title, setTitle] = useState('')
   const [postText, setPostText] = useState('')
   const createPost = async () => {
+    const createdAt = new Date().toLocaleString()
+
     await addDoc(collection(db, 'posts'), {
       title: title,
       postsText: postText,
@@ -15,6 +17,7 @@ const CreatePost = () => {
         username: auth.currentUser.displayName,
         id: auth.currentUser.uid,
       },
+      createdAt: createdAt,
     })
     router.push('/')
   }
