@@ -5,7 +5,6 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  console.log('app')
   const readStrorage = async () => {
     return (await localStorage.getItem('isAuth')) === 'true' ? true : false
   }
