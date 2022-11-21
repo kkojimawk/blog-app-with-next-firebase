@@ -3,7 +3,10 @@ import { useRouter } from 'next/router'
 import React from 'react'
 import { auth } from '../../firebase'
 
-const Logout = ({ setIsAuth }) => {
+type Props = {
+  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>
+}
+const Logout: React.FC<Props> = ({ setIsAuth }) => {
   const router = useRouter()
   const logoutWithGoogle = async () => {
     await signOut(auth)

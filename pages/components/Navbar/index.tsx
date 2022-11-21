@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Link from 'next/link'
 import React from 'react'
 
-const Navbar = ({ isAuth }) => {
-  console.log(isAuth)
-
+type Props = {
+  isAuth: Promise<boolean>
+}
+const Navbar: React.FC<Props> = ({ isAuth }) => {
   return (
     <nav className='bg-orange-400 py-4'>
       <ul className='flex justify-center text-2xl'>

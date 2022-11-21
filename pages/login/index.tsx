@@ -1,9 +1,13 @@
 import { signInWithPopup } from 'firebase/auth'
+import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { auth, provider } from '../../firebase'
 
-const Login = ({ setIsAuth }) => {
+type Props = {
+  setIsAuth: React.Dispatch<React.SetStateAction<boolean>>
+}
+const Login: NextPage<Props> = ({ setIsAuth }) => {
   const router = useRouter()
   const logInWithGoogle = async () => {
     await signInWithPopup(auth, provider)

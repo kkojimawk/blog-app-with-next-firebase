@@ -1,9 +1,10 @@
 import { addDoc, collection } from 'firebase/firestore'
+import { NextPage } from 'next'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
 import { auth, db } from '../../firebase'
 
-const CreatePost = () => {
+const CreatePost: NextPage = () => {
   const router = useRouter()
   const [title, setTitle] = useState('')
   const [postText, setPostText] = useState('')

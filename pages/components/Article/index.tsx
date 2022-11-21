@@ -1,6 +1,15 @@
 import React from 'react'
-
-const Article = ({ post, auth, deletePost }) => {
+import { Post } from '../..'
+type Props = {
+  post: Post
+  auth: {
+    currentUser: {
+      uid: string
+    }
+  }
+  deletePost: (id: string) => void
+}
+const Article: React.FC<Props> = ({ post, auth, deletePost }) => {
   return (
     <div key={post.id} className='my-8 w-full rounded-md bg-white py-7 px-10 shadow-lg'>
       <div className='py-2'>
@@ -10,7 +19,7 @@ const Article = ({ post, auth, deletePost }) => {
         <p className='text-lg'>{post.postsText}</p>
       </div>
       <div className='py-2 text-right'>
-        {post.author.id === auth.currentUser.uid ? (
+        {auth.currentUser && auth.currentUser.uid === post.author.id ? (
           <button
             type='button'
             className='text-md rounded-md border bg-red-500 px-3 py-1 text-white'
