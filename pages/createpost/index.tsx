@@ -1,6 +1,6 @@
 import { addDoc, collection } from 'firebase/firestore'
 import { useRouter } from 'next/router'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { auth, db } from '../../firebase'
 
 const CreatePost = () => {
@@ -19,10 +19,16 @@ const CreatePost = () => {
     router.push('/')
   }
 
+  useEffect(() => {
+    if (!auth.currentUser) {
+      router.push('/')
+    }
+  }, [router])
+
   return (
     <div>
       <h1 className='text-center text-4xl'>記事を投稿する</h1>
-      <div className='my-14 w-full rounded-md border p-10 shadow-lg'>
+      <div className='my-14 w-full rounded-md border bg-white p-10 shadow-lg'>
         <div className='py-4'>
           <div className='text-2xl'>タイトル</div>
           <input
