@@ -1,8 +1,19 @@
-import '../styles/globals.css'
 import type { AppProps } from 'next/app'
+import { useState } from 'react'
+import Layout from './components/Layout'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [isAuth, setIsAuth] = useState(false)
+
+  return (
+    <>
+      <Layout isAuth={isAuth}>
+        <Component setIsAuth={setIsAuth} {...pageProps} />
+      </Layout>
+    </>
+  )
 }
 
 export default MyApp
