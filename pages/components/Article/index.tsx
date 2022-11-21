@@ -1,8 +1,6 @@
 import React from 'react'
 
 const Article = ({ post, auth, deletePost }) => {
-  console.log('article')
-
   return (
     <div key={post.id} className='my-8 w-full rounded-md bg-white py-7 px-10 shadow-lg'>
       <div className='py-2'>

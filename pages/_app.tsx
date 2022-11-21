@@ -5,10 +5,14 @@ import '@fortawesome/fontawesome-svg-core/styles.css'
 import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  const readStrorage = async () => {
-    return (await localStorage.getItem('isAuth')) === 'true' ? true : false
+  const readStorage = () => {
+    const getStorage = new Promise<boolean>((resolve) => {
+      const storage = localStorage.getItem('isAuth') === 'true' ? true : false
+      resolve(storage)
+    })
+    return getStorage
   }
-  const [isAuth, setIsAuth] = useState(readStrorage())
+  const [isAuth, setIsAuth] = useState(readStorage())
 
   return (
     <>
