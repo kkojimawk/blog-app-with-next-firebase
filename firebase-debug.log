@@ -1,0 +1,25 @@
+[debug] [2022-11-21T20:50:27.536Z] ----------------------------------------------------------------------
+[debug] [2022-11-21T20:50:27.539Z] Command:       /Users/kojima/.nodebrew/node/v16.14.2/bin/node /Users/kojima/.nodebrew/current/bin/firebase deploy
+[debug] [2022-11-21T20:50:27.540Z] CLI Version:   11.16.1
+[debug] [2022-11-21T20:50:27.540Z] Platform:      darwin
+[debug] [2022-11-21T20:50:27.541Z] Node Version:  v16.14.2
+[debug] [2022-11-21T20:50:27.555Z] Time:          Tue Nov 22 2022 05:50:27 GMT+0900 (日本標準時)
+[debug] [2022-11-21T20:50:27.557Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-11-21T20:50:27.674Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-11-21T20:50:27.677Z] > authorizing via signed-in user (kkojimawk@gmail.com)
+[debug] [2022-11-21T20:50:27.677Z] [iam] checking project blog-app-2efff for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2022-11-21T20:50:27.682Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/blog-app-2efff:testIamPermissions [none]
+[debug] [2022-11-21T20:50:27.683Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/blog-app-2efff:testIamPermissions x-goog-quota-user=projects/blog-app-2efff
+[debug] [2022-11-21T20:50:27.684Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blog-app-2efff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-21T20:50:28.487Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/blog-app-2efff:testIamPermissions 200
+[debug] [2022-11-21T20:50:28.489Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/blog-app-2efff:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2022-11-21T20:50:28.491Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/blog-app-2efff [none]
+[debug] [2022-11-21T20:50:28.945Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/blog-app-2efff 200
+[debug] [2022-11-21T20:50:28.946Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/blog-app-2efff {"projectId":"blog-app-2efff","projectNumber":"1044329343858","displayName":"blog-app","name":"projects/blog-app-2efff","resources":{"hostingSite":"blog-app-2efff"},"state":"ACTIVE","etag":"1_fc66d73f-476a-4adb-9065-b098d8f0f6ba"}
+[info] 
+[info] === Deploying to 'blog-app-2efff'...
+[info] 
+[info] i  deploying hosting 
+[debug] [2022-11-21T20:50:28.957Z] >>> [apiv2][query] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blog-app-2efff/versions [none]
+[debug] [2022-11-21T20:50:28.958Z] >>> [apiv2][body] POST https://firebasehosting.googleapis.com/v1beta1/projects/-/sites/blog-app-2efff/versions {"status":"CREATED","labels":{"deployment-tool":"cli-firebase"}}

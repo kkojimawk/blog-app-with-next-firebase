@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 type Props = {
-  isAuth: Promise<boolean>
+  isAuth: boolean
 }
 const Navbar: React.FC<Props> = ({ isAuth }) => {
   return (

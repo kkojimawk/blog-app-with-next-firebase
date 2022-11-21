@@ -6,10 +6,12 @@ import '../styles/globals.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   const readStorage = () => {
-    const getStorage = new Promise<boolean>((resolve) => {
-      const storage = localStorage.getItem('isAuth') === 'true' ? true : false
-      resolve(storage)
-    })
+    const getStorage = () => {
+      if (typeof window !== 'undefined' && localStorage.getItem('isAuth') === 'true') {
+        return true
+      }
+      return false
+    }
     return getStorage
   }
   const [isAuth, setIsAuth] = useState(readStorage())
